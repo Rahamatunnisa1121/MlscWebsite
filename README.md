@@ -18,3 +18,4 @@ Welcome to the official repository of the Microsoft Learn Student Club (MLSC) We
 Thanks to all MLSC members and contributors.
 Built with Tailwind CSS.
 
+Note: The images folder is included in the .gitignore file to prevent large media files from bloating the repository. Ensure that any necessary images are hosted appropriately or added to the repository as needed.
