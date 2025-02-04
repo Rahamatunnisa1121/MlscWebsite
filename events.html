@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Events</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet">
+        <style>
+                /* For glass effect */
+                body {
+                    background-color: #0f172a; /* Dark Background */
+                    color: #fff; /* White Text */
+                    padding-top: 90px;
+                  }
+                .glass-effect {
+                    background: rgba(255, 255, 255, 0.2); /* Increased transparency */
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    border-radius: 0.75rem;
+                    padding: 1.5rem;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                }
+                .event-card {
+                    position: relative;
+                    aspect-ratio: 16/9;
+                    overflow: hidden;
+                    border-radius: 8px;
+                }
+                .event-card::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(transparent, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.8));
+                }
+                .event-card img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .event-overlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding: 1.5rem;
+                    color: white;
+                    z-index: 10;
+                }
+                .title {
+                    background: linear-gradient(90deg, #4338ca, #6366f1);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+               
+                .navbar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 1000;
+                }
+
+            </style>
+    </head>
+    <body
+        class="bg-cover bg-center h-screen"
+        style="background:linear-gradient(90deg,#1f8aa8,#7b289a,#b64f30);"
+        class="min-h-screen text-white">
+        <!-- Nav Bar -->
+        <nav class="bg-gray-800 navbar">
+            <div class="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+                <div
+                    class="relative flex h-24 items-center justify-between">
+                    <!-- Mobile Menu Button -->
+                    <div
+                        class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                        <button type="button"
+                            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false"
+                            id="mobile-menu-button">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="block h-6 w-6" fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Logo Section -->
+                    <div
+                        class="flex flex-1 items-center justify-center sm:justify-start">
+                        <img class="h-16 sm:h-20 w-auto"
+                            src="public/logo2.png"
+                            alt="MLSC Logo" />
+                    </div>
+
+                    <!-- Links Section -->
+                    <div class="hidden sm:flex space-x-6">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-white font-bold hover:text-white">Dashboard</a>
+                        <a href="events.html"
+                            class="text-gray-300 hover:text-white font-semibold">Events</a>
+                        <a href="members.html"
+                            class="text-gray-300 hover:text-white font-semibold ">Members</a>
+                        <a href="gallery.html"
+                            class="text-gray-300 hover:text-white font-semibold ">Gallery</a>
+
+                        <a href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu" target="_blank"
+                            class="text-gray-300 hover:text-white font-semibold ">Youtube</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state -->
+            <div class="sm:hidden hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pb-3 pt-2">
+                    <a href="index.html"
+                        class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+                    <a href="events.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Events</a>
+                    <a href="members.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Members</a>
+                    <a href="gallery.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Gallery</a>
+                    <a href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu" target="_blank"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Youtube</a>
+                </div>
+            </div>
+        </nav>
+        <!-- End of Nav Bar -->
+
+        <!-- Main Content -->
+        <div
+            class="flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
+            style="background-image: url('events/eventtitle.jpg');">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div
+                class="glass-effect w-full px-6 sm:px-12 lg:px-24 py-6 text-right">
+                <h1
+                    class="text-3xl lg:text-4xl font-bold text-white">Recent
+                    Event - POWER BI WORKSHOP</h1>
+                <p class="mt-2 text-white flex items-center justify-end">
+                    <span class="material-icons text-lg">Event Date:</span>
+                    <span class="ml-2">20 January 2025</span>
+                </p>
+                <p class="mt-4 text-white text-lg">The Power BI Workshop empowered students with hands-on skills in data visualization 
+                    enhancing their analytics expertise.</p>
+
+                <!-- Form LInk Can Change  -->
+                <a href="https://forms.office.com/r/b8ZKtg5Ya2?origin=lprLink" target="_blank"> <button
+                        class="mt-4 bg-gradient-to-r from-blue-400 via-green-400 to-teal-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-500 hover:via-green-500 hover:to-teal-500 focus:outline-none shadow-lg transform hover:scale-105 transition-transform">Join us</button>
+                        </button> </a>
+
+            </div>
+            <div class="mt-20 w-full px-6 sm:px-12 lg:px-24 text-left"
+                style="z-index: 10;">
+                <h2
+                    class="text-5xl lg:text-8xl font-semibold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">Events</h2>
+                <p class="mt-2 text-4xl text-gray-300" style="z-index: 1;">Our
+                    past successful
+                    events</p>
+            </div>
+        </div>
+        <!-- End of main content -->
+
+        <!-- Previous Events -->
+        <div class="container mx-auto px-4 py-8">
+            <h1
+                class="title text-4xl font-bold mb-8 font-semibold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">Recently
+                at<br>MLSC</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="event-card">
+                    <img src="events/powerbi.jpg" alt="Power BI">
+                    <div class="event-overlay">
+                        <h3 class="text-xl font-bold">Basics of Power BI</h3>
+                        <p class="text-sm opacity-90">20 Jan 2025</p>
+                        <p class="text-sm opacity-90">150+ Participants</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="events/cover-cp.jpg" alt="CP">
+                    <div class="event-overlay">
+                        <h3 class="text-xl font-bold">Competitive Coding</h3>
+                        <p class="text-sm opacity-90">30 Oct 2024</p>
+                        <p class="text-sm opacity-90">200+ Participants</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="events/induction.jpg" alt="Induction">
+                    <div class="event-overlay">
+                        <h3 class="text-xl font-bold">Induction about MLSC VRSEC Student Chapter for batch 2024-28 students:</h3>
+                        <p class="text-sm opacity-90">11 July 2024</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="events/azure.jpg" alt="Microsoft Azure Fundamentals">
+                    <div class="event-overlay">
+                        <h3 class="text-xl font-bold">Microsoft Azure Fundamentals</h3>
+                        <p class="text-sm opacity-90">13-20 June 2024</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="events/web.jpg" alt="Web Development Workshop">
+                    <div class="event-overlay">
+                        <h3 class="text-xl font-bold">Web Development Workshop</h3>
+                        <p class="text-sm opacity-90">4-5 March 2024</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="events/azureai.jpg" alt="Microsoft Azure AI Fundamentals">
+                    <div class="event-overlay">
+                        <h3 class="text-xl font-bold">Microsoft Azure AI Fundamentals</h3>
+                        <p class="text-sm opacity-90">29 Jan – 8 Feb 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end previous events -->
+
+        <!-- Footer starts -->
+
+        <footer class="bg-black text-gray-400 py-8 mt-10">
+            <div class="container mx-auto px-4">
+                <!-- Main Content -->
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
+                    <!-- Left Section -->
+                    <div class="text-center md:text-left">
+                        <img src="public/logo2.png"
+                            alt="Microsoft Learn Student Ambassador Logo"
+                            class="mx-auto md:mx-0 mb-4 md:mb-6">
+                        <p class="font-semibold">WE ENCOURAGE YOUNG MINDS TO
+                            PURSUE KNOWLEDGE AND EXCELLENCE IN UNIQUE WAYS</p>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="flex justify-center space-x-4 text-xl">
+                        <a
+                            href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/mlsc_vrsec/?next=%2F&hl=en"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/mlsc-vrsec-bb13272b1/"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-white font-semibold mb-2">CONTACT
+                            US</h3>
+
+                        <p>📧 <a href="mailto:misakiit@outlook.com"
+                                class="hover:text-white">mlse@vrsec.ac.in</a></p>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-white font-semibold mb-2">VISIT US
+                            AT</h3>
+                        <p>SIDDHARTHA UNIVERSITY</p>
+                        <p>VIJAYAWADA</p>
+                        <p>INDIA</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Section -->
+                <div class="text-center border-t border-gray-700 mt-6 pt-4">
+                    <p>&copy; 2024 MLSC VRSEC | DESIGNED BY MLSC VRSEC TEAM</p>
+                </div>
+            </div>
+        </footer>
+        <!-- footer ends -->
+        <!-- scripts -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script src="index.js"></script>
+        <script>
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton?.addEventListener('click', () => {
+                mobileMenu?.classList.toggle('hidden');
+            });
+
+            AOS.init({
+                duration: 1000, // Animation duration in ms
+                offset: 100, // Offset from the top for triggering animations
+              });
+        </script>
+    </body>
+</html>

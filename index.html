@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MLSC VRSEC</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet">
+
+        <style>
+            body {
+                /*background-color: #0f172a; /* Dark Background */ 
+                color: #fff; /* White Text */
+                padding-top: 96px;
+              }
+          
+              /* Floating Animation */
+              .floating {
+                animation: float 3s ease-in-out infinite;
+              }
+          
+              @keyframes float {
+                0%, 100% {
+                  transform: translateY(0);
+                }
+                50% {
+                  transform: translateY(-8px);
+                }
+              }
+          
+              /* Gradient Text */
+              .gradient-text {
+                background: linear-gradient(90deg, #4f46e5, #6ee7b7);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+              /* Hides the scrollbar */
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+              
+          </style>
+    </head>
+    <body
+        class=" min-h-screen text-white"
+        style="background: linear-gradient(90deg, #1f8aa8, #7b289a, #b64f30);">
+        <!-- Navbar -->
+        <nav class="bg-gray-800 navbar">
+            <div class="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+                <div class="relative flex h-24 items-center justify-between">
+                    <!-- Mobile Menu Button -->
+                    <div
+                        class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                        <button type="button"
+                            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false"
+                            id="mobile-menu-button">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="block h-6 w-6" fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Logo Section -->
+                    <div
+                        class="flex items-center justify-between sm:justify-start clg-header space-x-4">
+                        <img
+                            class="block h-16 sm:h-20 w-auto mx-auto sm:mx-0 max-w-xs"
+                            src="public/logo2.png" alt="Logo" />
+                        <!-- First Image: Only visible on larger screens -->
+                        <img
+                            class="hidden sm:block h-12 sm:h-16 md:h-20 lg:h-24 max-w-md w-auto"
+                            src="images/SAHE_Main-Header.png"
+                            alt="SAHE Main Header" />
+
+                        <!-- Second Image: Visible on all screens, centered only on small screens -->
+
+                    </div>
+
+                    <!-- Links Section -->
+                    <div class="hidden sm:flex space-x-6">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-white font-bold">Dashboard</a>
+                        <a href="events.html"
+                            class="text-gray-300 hover:text-white font-semibold">Events</a>
+                        <a href="members.html"
+                            class="text-gray-300 hover:text-white font-semibold">Members</a>
+                        <a href="gallery.html"
+                            class="text-gray-300 hover:text-white font-semibold">Gallery</a>
+                        <a href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu "
+                        target="_blank"
+                            class="text-gray-300 hover:text-white font-semibold">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state -->
+            <div class="sm:hidden hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pb-3 pt-2">
+                    <a href="index.html"
+                        class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+                    <a href="events.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Events</a>
+                    <a href="members.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Members</a>
+                    <a href="gallery.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Gallery</a>
+                    <a href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu" target="_blank"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">YouTube</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hackocalypse Section -->
+        <div class="flex justify-center mt-8 px-4">
+            <div
+                class="flex justify-between items-center bg-white bg-opacity-20 backdrop-blur-md text-white rounded-lg shadow-md p-6 w-full max-w-7xl border border-gray-200">
+                <div class="flex items-center">
+                    <div class="h-8 w-1 bg-blue-500 rounded-sm"></div>
+                    <span class="ml-3 text-lg sm:text-xl font-medium">Connect
+                        Us</span>
+                </div>
+                <a href="social.html"
+                    class="text-black-400 text-sm sm:text-base font-medium hover:underline">Join
+                    our socials</a>
+            </div>
+        </div>
+
+        <!-- Centered Text Section -->
+
+        <div class="text-center mt-20 px-5">
+            <!-- First Line: Microsoft Learn Student -->
+            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+                Microsoft Learn
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Student</span>
+            </h1>
+
+            <!-- Second Line: Ambassadors -->
+            <h2
+                class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mt-8">
+                Ambassadors
+            </h2>
+
+            <!-- Third Line: VRSEC Chapter -->
+            <h3
+                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mt-8">
+                VRSEC Chapter
+            </h3>
+        </div>
+        <!-- code for About -->
+
+        <!-- end of about -->
+
+        <!-- Our Domains -->
+        <!-- Our Domains -->
+        <div class="flex flex-col items-center px-8 py-8 space-y-6">
+            <!-- Domains Heading -->
+            <div class="text-center">
+                <h1 class="text-4xl font-bold gradient-text"
+                    data-aos="fade-down">Our Domains</h1>
+            </div>
+
+            <!-- Cards Section -->
+            <div class="grid md:grid-cols-3 gap-8 w-full max-w-7xl">
+                <!-- AI & ML Card -->
+                <div
+                    class="bg-[rgba(255,255,255,0.1)] backdrop-blur-lg p-6 rounded-lg shadow-md text-center transform transition-all hover:shadow-lg hover:border-violet-500 hover:-translate-y-2 border border-gray-700 floating"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-center items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                            <svg class="h-6 w-6 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-semibold text-white mb-2">AI &
+                        ML</h2>
+                    <p class="text-gray-200 text-sm">Harnessing the power of
+                        artificial intelligence and machine learning to innovate
+                        and drive impactful solutions.</p>
+                </div>
+
+                <!-- Cloud Computing Card -->
+                <div
+                    class="bg-[rgba(255,255,255,0.1)] backdrop-blur-lg p-6 rounded-lg shadow-md text-center transform transition-all hover:shadow-lg hover:border-violet-500 hover:-translate-y-2 border border-gray-700 floating"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                            <svg class="h-6 w-6 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-semibold text-white mb-2">Cloud
+                        Computing</h2>
+                    <p class="text-gray-200 text-sm">Leveraging the power of the
+                        cloud to deliver flexible, scalable, and efficient
+                        solutions.</p>
+                </div>
+
+                <!-- Competitive Coding Card -->
+                <div
+                    class="bg-[rgba(255,255,255,0.1)] backdrop-blur-lg p-6 rounded-lg shadow-md text-center transform transition-all hover:shadow-lg hover:border-violet-500 hover:-translate-y-2 border border-gray-700 floating"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                            <svg class="h-6 w-6 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h2
+                        class="text-xl font-semibold text-white mb-2">Competitive
+                        Coding</h2>
+                    <p class="text-gray-200 text-sm">Sharpening coding skills
+                        through competitive programming challenges and
+                        algorithmic problem-solving</p>
+                </div>
+
+                <!-- IoT Card -->
+                <div
+                    class="bg-[rgba(255,255,255,0.1)] backdrop-blur-lg p-6 rounded-lg shadow-md text-center transform transition-all hover:shadow-lg hover:border-violet-500 hover:-translate-y-2 border border-gray-700 floating"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                            <svg class="h-6 w-6 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-semibold text-white mb-2">IoT</h2>
+                    <p class="text-gray-200 text-sm">Building intelligent
+                        systems with interconnected devices to enhance
+                        efficiency and connectivity.</p>
+                </div>
+
+                <!-- Web Development Card -->
+                <div
+                    class="bg-[rgba(255,255,255,0.1)] backdrop-blur-lg p-6 rounded-lg shadow-md text-center transform transition-all hover:shadow-lg hover:border-violet-500 hover:-translate-y-2 border border-gray-700 floating"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex justify-center items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                            <svg class="h-6 w-6 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-semibold text-white mb-2">Web
+                        Development</h2>
+                    <p class="text-gray-200 text-sm">Creating dynamic and
+                        responsive web experiences that captivate users and
+                        drive business growth.</p>
+                </div>
+
+                <!-- Design Card -->
+                <div
+                    class="bg-[rgba(255,255,255,0.1)] backdrop-blur-lg p-6 rounded-lg shadow-md text-center transform transition-all hover:shadow-lg hover:border-violet-500 hover:-translate-y-2 border border-gray-700 floating"
+                    data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex justify-center items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                            <svg class="h-6 w-6 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h2
+                        class="text-xl font-semibold text-white mb-2">Design</h2>
+                    <p class="text-gray-200 text-sm">Crafting visually stunning
+                        designs that provide seamless user experiences and
+                        elevate brands.</p>
+                </div>
+
+                <!-- Social Marketing Card -->
+                <div
+                    class="bg-[rgba(255,255,255,0.1)] backdrop-blur-lg p-6 rounded-lg shadow-md text-center transform transition-all hover:shadow-lg hover:border-violet-500 hover:-translate-y-2 border border-gray-700 floating"
+                    data-aos="fade-up" data-aos-delay="700">
+                    <div class="flex justify-center items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                            <svg class="h-6 w-6 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-semibold text-white mb-2">Social
+                        Marketing</h2>
+                    <p class="text-gray-200 text-sm">Maximizing online presence
+                        and engagement through targeted and strategic digital
+                        marketing campaigns.</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Out Domains -->
+
+        <!-- Lead photos -->
+        <div class="text-center">
+            <h1 class="text-4xl font-bold gradient-text"
+                data-aos="fade-down">Our Leads</h1>
+        </div>
+        <div class="relative w-full  py-10 px-5">
+            <!-- Carousel Wrapper -->
+            <div
+                class="carousel flex items-center gap-4 overflow-x-scroll no-scrollbar px-4">
+                <!-- Card Template -->
+                <!-- Chairs -->
+                <!-- Chairs -->
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/surya.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3 class="text-lg font-semibold text-white">Surya
+                            Sanjay Damuluri</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">Chair Person</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="#" class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="http://www.linkedin.com/in/surya-damuluri-68549a25a"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/Suryadamuluri"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dummy Cards (Repeat or Generate as Needed) -->
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/akshiitha.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3
+                            class="text-lg font-semibold text-white">Akshitha Kamasani</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">Chair Person</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="#"
+                                class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/akshiitha-kamasani/"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="#"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more cards as needed -->
+                <!-- Vice Chairs -->
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/nandini.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3 class="text-lg font-semibold text-white">
+                           Durga Nandini Chalamalasetty</h3>
+                        <p class="role text-sm font-medium mt-2 text-white">Vice
+                            Chair Person</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a
+                                href="https://www.instagram.com/nandinii_ch/?utm_source=ig_web_button_share_sheet"
+                                class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/durga-nandini-chalamalasetty/"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://github.com/DurgaNandini-Chalamalasetty"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- another card -->
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/tejaswi.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3
+                            class="text-lg font-semibold text-white">Tejaswi Kondabolu</h3>
+                        <p class="role text-sm font-medium mt-2 text-white">
+                            Vice Chair Person</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="#" class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://in.linkedin.com/in/tejaswi-kondabolu"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://gitlab.com/Tejaswi_Kondabolu"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ai & ML domain-->
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/megha.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3 class="text-lg font-semibold text-white">
+                            Meghashri Muthu</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">AI/ML Lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a
+                                href="https://www.instagram.com/m3gha_s/?utm_source=ig_web_button_share_sheet"
+                                class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/meghashrimuthu"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="#"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/rizwaan.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3
+                            class="text-lg font-semibold text-white">Rizwaan Shaik</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">AI/ML
+                            Co-lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="#" class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/rizwaan-shaik-a2b520191/"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/RizwaanShaik273"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Computing -->
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/Karthikeya.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3
+                            class="text-lg font-semibold text-white">Karthikeya Dangeti</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">Cloud Computing
+                            Lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="#" class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/bala-karthikeya-dangeti-452006259"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/Karthikeyabala"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/teja.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3
+                            class="text-lg font-semibold text-white">Tejasri Gottipati</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">Cloud Computing
+                            Co-lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="https://www.instagram.com/tejasri_0912"
+                                class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/tejasri2004"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/6294T"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- COMPETATIVE CODING -->
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/akshitha.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3
+                            class="text-lg font-semibold text-white">Akshitha Yadav Bathula</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">Competitive
+                            Coding
+                            Lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="https://www.instagram.com/akshithayadav_b"
+                                class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/akshitha-yadav-bathula-9ab324259/"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/AkshithaYadav-Bathula"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/vijaya.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3 class="text-lg font-semibold text-white">Vijaya Vegisetti</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">Competitive
+                            Coding
+                            Co-lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="#" class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/vijaya-vegisetti-72525a2a4/"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/vegisettivijaya"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- END -->
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/ruhi.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3
+                            class="text-lg font-semibold text-white">Rahamatunnisa Shaik</h3>
+                        <p class="role text-sm font-medium mt-2 text-white">Web
+                            Lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="https://www.instagram.com/r_uhi05"
+                                class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/rahamatunnisa-shaik-0a8a97258"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/Rahamatunnisa1121"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/srinu.JPG"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3 class="text-lg font-semibold text-white">Srinu Medisetti</h3>
+                        <p class="role text-sm font-medium mt-2 text-white">Web
+                            Co-lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a
+                                href="https://www.instagram.com/srinu_medisetti04/"
+                                class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/srinu-medisetti/"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/Sreenu031"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Marketing -->
+
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/sania.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3 class="text-lg font-semibold text-white">Mohammad Sania Sulthana</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">Marketing
+                            Lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="https://www.instagram.com/saniasultana04/?hl=en"
+                                class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/sania-sultana-mohammad-809490216/"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/Saniasu"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/Shaik Shafina.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3 class="text-lg font-semibold text-white">
+                            Shafina Shaik</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">Marketing
+                            Co-lead
+                           </p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a href="#" class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/shaik-shafina-0a64602a5"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/SHAIKSHAFINA"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end  -->
+                <!-- Design team -->
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/reshmitha.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3 class="text-lg font-semibold text-white">Reshmitha
+                            Rani</h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">Design Lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a
+                                href="https://www.instagram.com/resh._156_/?utm_source=ig_web_button_share_sheet"
+                                class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/reshmitha-panuganti-4a4a7b258"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/Reshmitha-rani"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105 border border-gray-600 rounded-xl">
+                    <img
+                        src="images/jc.jpg"
+                        alt="Profile"
+                        draggable="false"
+                        class="w-full h-64 object-cover rounded-t-xl" />
+                    <div class="info p-4 text-white">
+                        <h3 class="text-lg font-semibold text-white">Jai Chandra
+                        </h3>
+                        <p
+                            class="role text-sm font-medium mt-2 text-white">Design Lead</p>
+                        <div
+                            class="social-icons flex justify-center space-x-4 mt-3">
+                            <a
+                                href="https://www.instagram.com/_x.izumi.x_?igsh=MWlyNmtxbzZ6NDI2Zw=="
+                                class="text-white hover:text-gray-400"
+                                target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/svsr-jaichandra-389833257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/Jaichandra103"
+                                target="_blank"
+                                class="text-white hover:text-gray-400">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+
+            </div>
+
+            <!-- Left Arrow -->
+            <button
+                class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 hover:bg-gray-600"
+                onclick="scrollL()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <!-- Right Arrow -->
+            <button
+                class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 hover:bg-gray-600"
+                onclick="scrollRight()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- End of Leads Photos -->
+
+        <!-- Contact Us -->
+        <div
+            class="flex flex-col md:flex-row items-center justify-between bg-black text-white max-w-4xl mx-auto p-6 md:p-10 rounded-lg shadow-lg border border-gray-700">
+            <!-- Left Content -->
+            <div class="text-left space-y-4 md:space-y-5">
+                <h1 class="text-xl md:text-2xl font-bold">FACULTY COORDINATOR</h1>
+                <div class="border-t-2 border-blue-500 w-64 md:w-64"></div>
+                <h2 class="text-xl md:text-3xl font-semibold leading-snug">Ch. Raga Madhuri, Asst. Prof.</h2>
+                <h3 class="text-sm md:text-xl font-semibold leading-snug">Department of Computer Science and Engineering</h3>
+                <a href="mailto:madhuri.chandra1209@gmail.com" target="_blank"> <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 mt-5 rounded-md text-sm md:text-base">
+                        Email
+                </button> </a>
+            </div>
+
+            <!-- Right Content -->
+            <div class="mt-6 w-64 md:mt-0 md:ml-10">
+                <img
+                    src="images/ragamadhuri.jpg"
+                    alt="Raga Madhuri"
+                    class="w-64 md:w-56 lg:w-64 rounded-md" />
+            </div>
+        </div>
+
+        <!-- End of Contact Us -->
+
+        <!-- Footer starts -->
+
+        <footer class="bg-black text-gray-400 py-8 mt-10">
+            <div class="container mx-auto px-4">
+                <!-- Main Content -->
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
+                    <!-- Left Section -->
+                    <div class="text-center md:text-left">
+                        <img src="public/logo2.png"
+                            alt="Microsoft Learn Student Ambassador Logo"
+                            class="mx-auto md:mx-0 mb-4 md:mb-6">
+                        <p class="font-semibold">WE ENCOURAGE YOUNG MINDS TO
+                            PURSUE KNOWLEDGE AND EXCELLENCE IN UNIQUE
+                            WAYS</p>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="flex justify-center space-x-4 text-xl">
+                        <a
+                            href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/mlsc_vrsec/?next=%2F&hl=en"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/mlsc-vrsec-bb13272b1/"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-white font-semibold mb-2">CONTACT
+                            US</h3>
+
+                        <p>📧 <a href="mailto:misakiit@outlook.com"
+                                class="hover:text-white">mlse@vrsec.ac.in</a></p>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-white font-semibold mb-2">VISIT US
+                            AT</h3>
+                        <p>SIDDHARTHA UNIVERSITY</p>
+                        <p>VIJAYAWADA</p>
+                        <p>INDIA</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Section -->
+                <div class="text-center border-t border-gray-700 mt-6 pt-4">
+                    <p>&copy; 2024 MLSC VRSEC | DESIGNED BY MLSC VRSEC TEAM</p>
+                </div>
+            </div>
+        </footer>
+        <!-- footer ends -->
+
+    </body>
+    <script src="https://kit.fontawesome.com/a076d05399.js"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="index.js"></script>
+    <script>
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton?.addEventListener('click', () => {
+                mobileMenu?.classList.toggle('hidden');
+            });
+
+            AOS.init({
+                duration: 1000, // Animation duration in ms
+                offset: 100, // Offset from the top for triggering animations
+              });
+        </script>
+
+</html>

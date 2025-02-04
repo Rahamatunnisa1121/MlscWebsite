@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MLSC VRSEC - Members</title>
+        <link rel="stylesheet" href="styles.css">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body style="background:linear-gradient(90deg,#1f8aa8,#7b289a,#b64f30);">
+        <canvas id="background-animation"></canvas>
+        <!-- Nav Bar -->
+        <nav class="bg-gray-800 navbar">
+            <div class="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+                <div
+                    class="relative flex h-24 items-center justify-between">
+                    <!-- Mobile Menu Button -->
+                    <div
+                        class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                        <button type="button"
+                            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false"
+                            id="mobile-menu-button">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="block h-6 w-6" fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Logo Section -->
+                    <div
+                        class="flex flex-1 items-center justify-center sm:justify-start">
+                        <img class="h-16 sm:h-20 w-auto"
+                            src="public/logo2.png"
+                            alt="MLSC Logo" />
+                    </div>
+
+                    <!-- Links Section -->
+                    <div class="hidden sm:flex space-x-6">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-white font-bold hover:text-white">Dashboard</a>
+                        <a href="events.html"
+                            class="text-gray-300 hover:text-white font-semibold">Events</a>
+                        <a href="#"
+                            class="text-gray-300 hover:text-white font-semibold ">Members</a>
+                        <a href="gallery.html"
+                            class="text-gray-300 hover:text-white font-semibold ">Gallery</a>
+
+                        <a href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu" target="_blank"
+                            class="text-gray-300 hover:text-white font-semibold ">Youtube</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state -->
+            <div class="sm:hidden hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pb-3 pt-2">
+                    <a href="index.html"
+                        class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+                    <a href="events.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Events</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Members</a>
+                    <a href="gallery.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Gallery</a>
+                    <a href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu" target="_blank"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Youtube</a>
+                </div>
+            </div>
+        </nav>
+        <!-- End of Nav Bar -->
+        <section class="hero-section">
+            <img src="events/cover-cp.jpg" alt="Team Photo"
+                class="hero-background">
+            <div class="hero-overlay"></div>
+            <h1 class="hero-title">Our Team</h1>
+        </section>
+
+        <section id="chairs" class="section">
+            <h2 class="section-title">Chairs and Vice Chairs</h2>
+            <div class="members-grid" >
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/surya.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Surya Sanjay Damuluri</h3>
+                            <p class="role  text-sm font-medium mt-2">Chair Person</p>
+                        </div>
+                </div>
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/akshiitha.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Akshitha Kamasani</h3>
+                            <p class="role  text-sm font-medium mt-2">Chair Person</p>
+                        </div>
+                </div>
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/nandini.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Durga Nandini Chalamalasetty</h3>
+                            <p class="role  text-sm font-medium mt-2">Vice Chair Person</p>
+                        </div>
+                </div>
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/tejaswi.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Tejaswi Kondabolu</h3>
+                            <p class="role  text-sm font-medium mt-2">Vice Chair Person</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aiml" class="section">
+            <h2 class="section-title">AI&ML</h2>
+            <div class="members-grid" >
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/megha.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Meghashri Muthu</h3>
+                            <p class="role  text-sm font-medium mt-2">AI/ML Lead</p>
+                        </div>
+                </div>
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/rizwaan.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Rizwaan Shaik</h3>
+                            <p class="role  text-sm font-medium mt-2">AI/ML Co-Lead</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cloud" class="section">
+            <h2 class="section-title">Cloud Computing</h2>
+            <div class="members-grid" >
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/Karthikeya.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Karthikeya Dangeti</h3>
+                            <p class="role  text-sm font-medium mt-2">Cloud Computing Lead</p>
+                        </div>
+                </div>
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/teja.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Teja Sri Gottipati</h3>
+                            <p class="role  text-sm font-medium mt-2">Cloud Computing Co-Lead</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cp" class="section">
+            <h2 class="section-title">Competitive Programming</h2>
+            <div class="members-grid" >
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/akshitha.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Akshitha Yadav Bathula</h3>
+                            <p class="role  text-sm font-medium mt-2">Competitive Programming Lead</p>
+                        </div>
+                </div>
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/vijaya.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Vijaya Vegisetti</h3>
+                            <p class="role  text-sm font-medium mt-2">Competitive Programming Co-Lead</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="webdev" class="section">
+            <h2 class="section-title">Web Development</h2>
+            <div class="members-grid" >
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/ruhi.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Rahamatunnisa Shaik</h3>
+                            <p class="role  text-sm font-medium mt-2">Web Development Lead</p>
+                        </div>
+                </div>
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/srinu.JPG"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Srinu Medisetti</h3>
+                            <p class="role  text-sm font-medium mt-2">Web Development Co-Lead</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="marketing" class="section">
+            <h2 class="section-title">Marketing & Public Relations</h2>
+            <div class="members-grid" >
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/sania.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Mohammad Sania Sulthana</h3>
+                            <p class="role  text-sm font-medium mt-2">Marketing & Public Relations Lead</p>
+                        </div>
+                </div>
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/Shaik Shafina.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">
+                            <h3 class="text-lg font-semibold">Shafina Shaik</h3>
+                            <p class="role  text-sm font-medium mt-2">Marketing & Public Relations Co-Lead</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="design" class="section">
+            <h2 class="section-title">Design</h2>
+            <div class="members-grid" >
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/reshmitha.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">Reshmitha Rani</h3>
+                            <p class="role  text-sm font-medium mt-2">Design Lead</p>
+                        </div>
+                </div>
+                <div class="member-card relative flex-shrink-0 w-64 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg rounded-lg shadow-lg text-center overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                        onclick="toggleCard(this)">
+                        <img
+                            src="images/jc.jpg"
+                            alt="Profile"
+                            class="w-full h-64 object-cover" />
+                        <div class="info p-4 text-white">Jai Chandra</h3>
+                            <p class="role  text-sm font-medium mt-2">Design Lead</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Footer starts -->
+
+        <footer class="bg-black text-gray-400 py-8 mt-10">
+            <div class="container mx-auto px-4">
+                <!-- Main Content -->
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
+                    <!-- Left Section -->
+                    <div class="text-center md:text-left">
+                        <img src="public/logo2.png"
+                            alt="Microsoft Learn Student Ambassador Logo"
+                            class="mx-auto md:mx-0 mb-4 md:mb-6">
+                        <p class="font-semibold">WE ENCOURAGE YOUNG MINDS TO
+                            PURSUE KNOWLEDGE AND EXCELLENCE IN UNIQUE
+                            WAYS</p>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="flex justify-center space-x-4 text-xl">
+                        <a
+                            href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/mlsc_vrsec/?next=%2F&hl=en"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/mlsc-vrsec-bb13272b1/"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-white font-semibold mb-2">CONTACT
+                            US</h3>
+
+                        <p>📧 <a href="mailto:misakiit@outlook.com"
+                                class="hover:text-white">mlse@vrsec.ac.in</a></p>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-white font-semibold mb-2">VISIT US
+                            AT</h3>
+                        <p>SIDDHARTHA UNIVERSITY</p>
+                        <p>VIJAYAWADA</p>
+                        <p>INDIA</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Section -->
+                <div class="text-center border-t border-gray-700 mt-6 pt-4">
+                    <p>&copy; 2024 MLSC VRSEC | DESIGNED BY MLSC VRSEC
+                        TEAM</p>
+                </div>
+            </div>
+        </footer>
+        <!-- footer ends -->
+
+        
+        <script src="index.js"></script>
+        <script>
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton?.addEventListener('click', () => {
+                mobileMenu?.classList.toggle('hidden');
+            });
+
+            
+        </script>
+    </body>
+</html>

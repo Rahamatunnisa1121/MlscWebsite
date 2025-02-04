@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Media Page</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body style="background: linear-gradient(90deg, #1f8aa8, #7b289a, #b64f30);"
+        class="font-sans">
+        <!-- Navbar -->
+        <nav class="bg-gray-800 navbar">
+            <div class="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+                <div
+                    class="relative flex h-24 items-center justify-between">
+                    <!-- Mobile Menu Button -->
+                    <div
+                        class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                        <button type="button"
+                            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false"
+                            id="mobile-menu-button">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="block h-6 w-6" fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Logo Section -->
+                    <div
+                        class="flex flex-1 items-center justify-center sm:justify-start">
+                        <img class="h-16 sm:h-20 w-auto"
+                            src="public/logo2.png"
+                            alt="MLSA Logo" />
+                    </div>
+                    <div
+                        class="flex flex-1 items-center justify-center sm:justify-start clg-header">
+                        <img
+                            class="h-12 sm:h-16 md:h-20 lg:h-24 w-auto hidden sm:block"
+                            src="images/SAHE_Main-Header.png"
+                            alt="MLSA Logo" />
+                    </div>
+
+                    <!-- Links Section -->
+                    <div class="hidden sm:flex space-x-6 ">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-white font-bold hover:text-white">Dashboard</a>
+                        <a href="events.html"
+                            class="text-gray-300 hover:text-white font-semibold">Events</a>
+                        <a href="members.html"
+                            class="text-gray-300 hover:text-white font-semibold ">Members</a>
+                        <a href="gallery.html"
+                            class="text-gray-300 hover:text-white font-semibold ">Gallery</a>
+                        <a href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu" target="_blank"
+                            class="text-gray-300 hover:text-white font-semibold ">Youtube</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Mobile menu, show/hide based on menu state -->
+            <div class="sm:hidden hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pb-3 pt-2">
+                    <a href="index.html"
+                        class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Dashboard</a>
+                    <a href="events.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Events</a>
+                    <a href="memebers.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Members</a>
+                    <a href="gallery.html"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Gallery</a>
+                    <a href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu" target="_blank"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Youtube</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Social Media Cards Section -->
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Instagram Card -->
+                <div
+                    class="bg-white bg-opacity-40 backdrop-blur-md shadow-lg rounded-lg overflow-hidden">
+                    <img src="public/instagram.png" alt="Instagram Icon"
+                        class="w-24 h-24 rounded-full mx-auto mt-6">
+                    <div class="text-center py-6">
+                        <h2
+                            class="text-2xl font-semibold text-white">Instagram</h2>
+                        <p class="text-white mt-2">Follow us on Instagram to
+                            stay updated on the latest trends and posts.</p>
+                        <a
+                            href="https://www.instagram.com/mlsc_vrsec/?next=%2F&hl=en"
+                            target="_blank"
+                            class="mt-4 inline-block text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full">Visit
+                            Profile</a>
+                    </div>
+                </div>
+
+                <!-- YouTube Card -->
+                <div
+                    class="bg-white bg-opacity-40 backdrop-blur-md shadow-lg rounded-lg overflow-hidden">
+                    <img
+                        src="public/youtube.png"
+                        alt="YouTube Icon"
+                        class="w-24 h-24 rounded-full mx-auto mt-6">
+                    <div class="text-center py-6">
+                        <h2
+                            class="text-2xl font-semibold text-white">YouTube</h2>
+                        <p class="text-white mt-2">Subscribe to our YouTube
+                            channel for amazing videos and tutorials.</p>
+                        <a href="https://youtube.com/@microsoftlearnstudentchaptervr?si=M-sVoOe3nxujQQFu" target="_blank"
+                            class="mt-4 inline-block text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded-full">Visit
+                            Channel</a>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Card -->
+                <div
+                    class="bg-white bg-opacity-40 backdrop-blur-md shadow-lg rounded-lg overflow-hidden">
+                    <img
+                        src="public/linkedin.png"
+                        alt="LinkedIn Icon"
+                        class="w-24 h-24 rounded-full mx-auto mt-6">
+                    <div class="text-center py-6">
+                        <h2
+                            class="text-2xl font-semibold text-white">LinkedIn</h2>
+                        <p class="text-white mt-2">Connect with us on LinkedIn
+                            for professional updates and networking.</p>
+                        <a
+                            href="https://www.linkedin.com/in/mlsc-vrsec-bb13272b1/"
+                            target="_blank"
+                            class="mt-4 inline-block text-white bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-full">Visit
+                            Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Membership Card Section -->
+        <div class="py-12 px-4 sm:px-6 lg:px-8 mt-12">
+            <div class="max-w-7xl mx-auto text-center">
+                <div
+                    class="bg-white bg-opacity-50 backdrop-blur-lg shadow-xl rounded-lg p-10 transform hover:scale-105 transition duration-300">
+                    <h2 class="text-4xl font-bold text-gray-800">Join Our
+                        Membership</h2>
+                    <p class="text-lg text-gray-600 mt-4">Stay updated with the
+                        latest news and content by becoming a member. Get
+                        exclusive access to offers, updates, and more!</p>
+                    <a href="https://forms.office.com/r/b8ZKtg5Ya2?origin=lprLink" target="_blank"
+                        class="mt-6 inline-block text-white bg-green-500 hover:bg-green-600 px-8 py-3 rounded-full text-xl">Take
+                        Membership</a>
+                </div>
+            </div>
+        </div>
+        <!-- Footer starts -->
+
+        <footer class="bg-black text-gray-400 py-8 mt-10">
+            <div class="container mx-auto px-4">
+                <!-- Main Content -->
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
+                    <!-- Left Section -->
+                    <div class="text-center md:text-left">
+                        <img src="../public/logo2.png"
+                            alt="Microsoft Learn Student Ambassador Logo"
+                            class="mx-auto md:mx-0 mb-4 md:mb-6">
+                        <p class="font-semibold">WE ENCOURAGE YOUNG MINDS TO
+                            PURSUE KNOWLEDGE AND EXCELLENCE IN UNIQUE
+                            WAYS</p>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="flex justify-center space-x-4 text-xl">
+                        <a href="https://github.com" target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/mlsc_vrsec/?next=%2F&hl=en"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/mlsc-vrsec-bb13272b1/"
+                            target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://discord.com" target="_blank"
+                            class="hover:text-white">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-white font-semibold mb-2">CONTACT
+                            US</h3>
+
+                        <p>📧 <a href="mailto:misakiit@outlook.com"
+                                class="hover:text-white">mlse@vrsec.ac.in</a></p>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-white font-semibold mb-2">VISIT US
+                            AT</h3>
+                        <p>SIDDHARTHA UNIVERSITY</p>
+                        <p>VIJAYAWADA</p>
+                        <p>INDIA</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Section -->
+                <div class="text-center border-t border-gray-700 mt-6 pt-4">
+                    <p>&copy; 2024 MLSA VRSEC | DESIGNED BY MLSA VRSEC
+                        TEAM</p>
+                </div>
+            </div>
+        </footer>
+        <!-- footer ends -->
+        <script>
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton?.addEventListener('click', () => {
+                mobileMenu?.classList.toggle('hidden');
+            });
+
+            AOS.init({
+                duration: 1000, // Animation duration in ms
+                offset: 100, // Offset from the top for triggering animations
+              });
+        </script>
+
+    </body>
+</html>
